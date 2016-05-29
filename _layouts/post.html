@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<section class="post">
+  <div class="titlebar" style="background-color: {{page.bgcolor | remove: "/"}}">
+    <div class="title row column small-6 center">
+      <h2 class="title">{{page.title}}</h2>
+      <h3 class="subtitle">{{page.subtitle | upcase}}</h1>
+      <h5 class="date">{{page.date | date: "%B %-d, %Y"}}</h5>
+    </div>
+    <div class="post_img" style="background-image: url(../../../../../assets/img/{{page.bg}})">
+    </div>
+  </div>
+  <div class="content row column large-8 medium-10 small-12">
+    {{content}}
+  </div>
+
+</section>
+{% include subscribe-bar.html %}

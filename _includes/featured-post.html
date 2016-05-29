@@ -1,0 +1,17 @@
+
+  {% for post in paginator.posts limit:1 %}
+    {% if {{post.thumb}} contains 'http' %}
+      {% assign img_url = {{post.thumb}}  %}
+    {% else %}
+      {% capture img_url %}../assets/img/{{ post.thumb }}{% endcapture %}
+    {% endif %}
+    <section class="featured-post" style="background-image: url({{img_url}})">
+      <a href="{{post.ext-url}}">
+        <div class="featured">
+          <h5>FEATURED ARTICLE</h5>
+        </br>
+          <h1>{{post.title}}</h1>
+        </div>
+      </a>
+    </section>
+  {% endfor %}
